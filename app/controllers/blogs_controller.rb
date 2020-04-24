@@ -57,7 +57,7 @@ class BlogsController < ApplicationController
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { head :no_text }
     end
   end
 
@@ -69,6 +69,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :text)
     end
 end
